@@ -1,0 +1,35 @@
+﻿@model EntityLayer.Concrete.Worker
+
+@{
+    Layout = null;
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<br />
+<h2>Çalışan Güncelleme Sayfası</h2>
+<br />
+
+
+@using (Html.BeginForm("EditWorker", "Worker", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Çalışan ID")
+        @Html.TextBoxFor(x => x.WorkerID, new { @class = "form-control" })
+        <br />
+        @Html.Label("Adı")
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+        <br />
+        @Html.Label("Soyadı")
+        @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
+        <br />
+        @Html.Label("Kimlik Numarası")
+        @Html.TextBoxFor(x => x.TC, new { @class = "form-control" })
+        <br />
+        @Html.Label("Çalıştığı Şirket")
+        @Html.TextAreaFor(x => x.CompanyName, new { @class = "form-control" })
+        
+    
+        <br />
+        <button class="btn btn-success">Güncelle</button>
+    </div>
+}

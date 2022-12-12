@@ -1,0 +1,31 @@
+﻿@model EntityLayer.Concrete.Company
+
+@{
+    Layout = null;
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<br />
+<h2>Şirket Güncelleme Sayfası</h2>
+
+
+@using (Html.BeginForm("EditCompany", "Company", FormMethod.Post)) 
+{ 
+<div class="form-group">
+    @Html.Label("Şirket ID")
+    @Html.TextBoxFor(x => x.CompanyID, new { @class = "form-control" })
+    <br />
+    @Html.Label("Şirket Adı")
+    @Html.TextBoxFor(x => x.CompanyName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Vergi Dairesi")
+    @Html.TextBoxFor(x => x.TaxAdministration, new { @class = "form-control" })
+    <br />
+    @Html.Label("Vergi Numarası")
+    @Html.TextBoxFor(x => x.TaxNumber, new { @class = "form-control" })
+    <br />
+    @Html.Label("Adres")
+    @Html.TextAreaFor(x => x.Address, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+</div>
+}
